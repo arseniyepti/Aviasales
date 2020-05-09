@@ -1,6 +1,6 @@
 import React from 'react';
 import { SectionTickets, Logo, Wrap } from '../../styled/styled';
-import TicketFilter from '../TicketFilter/TicketFilter';
+import ResultApp from '../ResultApp/ResultApp';
 import logo from './logo.svg';
 
 function App() {
@@ -8,7 +8,7 @@ function App() {
     <SectionTickets>
       <Logo src={logo} alt="logo aviasales" />
       <Wrap>
-        <TicketFilter />
+        <ResultApp />
       </Wrap>
     </SectionTickets>
   );

@@ -7,13 +7,13 @@ import {
   Info,
   Price,
   InfoChange,
-  Ticket,
+  TicketStyled,
 } from '../../styled/ticketResultStyled';
-import { getFlyTime, convertMinutes, formatTransfers } from '../helpers/helpers';
+import { getFlyTime, convertMinutes, formatTransfers } from '../../helpers/helpers';
 
-const TicketResult = ({ carrier, price, segments }) => {
+const Ticket = ({ carrier, price, segments }) => {
   return (
-    <Ticket>
+    <TicketStyled>
       <ColumnWrap>
         <Price>{price}</Price>
         <Info>{`${segments[0].origin} - ${segments[0].destination}`}</Info>
@@ -38,14 +38,14 @@ const TicketResult = ({ carrier, price, segments }) => {
         <Info>{formatTransfers(null, segments)}</Info>
         <InfoChange>{segments[1].stops.join(', ')}</InfoChange>
       </ColumnWrap>
-    </Ticket>
+    </TicketStyled>
   );
 };
 
-TicketResult.propTypes = {
+Ticket.propTypes = {
   carrier: PropTypes.string.isRequired,
   price: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
   segments: PropTypes.instanceOf(Array).isRequired,
 };
 
-export default TicketResult;
+export default Ticket;

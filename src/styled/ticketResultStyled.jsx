@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const Ticket = styled.div`
+export const TicketStyled = styled.div`
   display: flex;
   flex-flow: row nowrap;
   margin-top: 20px;

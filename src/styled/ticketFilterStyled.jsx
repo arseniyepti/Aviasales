@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import shape from '../components/TicketFilter/Shape.svg';
+import shape from '../components/ResultApp/Shape.svg';
 
 export const Wrapper = styled.div`
   display: flex;
@@ -7,31 +7,21 @@ export const Wrapper = styled.div`
   width: 500px;
 `;
 
-export const ButtonLeft = styled.button`
+export const Button = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
   width: 250px;
-  color: ${({ activeLeftBtn }) => (activeLeftBtn ? 'white' : '#4A4A4A')};
+  color: ${({ activeBtn }) => (activeBtn ? '#fff' : '#4A4A4A')};
   font-weight: 600;
   height: 50px;
   text-transform: uppercase;
   font-size: 12px;
-  border: 1px solid transparent;
+  border: 1px solid ${({ activeBtn }) => (activeBtn ? '#2196F3' : '#DFE5EC')};
   border-right-width: 0px;
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
-  background-color: ${({ activeLeftBtn }) => (activeLeftBtn ? '#2196F3' : 'white')};
-`;
-
-export const ButtonRight = styled(ButtonLeft)`
-  border-top-left-radius: 0px;
-  border-bottom-left-radius: 0px;
-  border-top-right-radius: 5px;
-  border-bottom-right-radius: 5px;
-  border-left-width: 0px;
-  color: ${({ activeRightBtn }) => (activeRightBtn ? 'white' : '#4A4A4A')};
-  background-color: ${({ activeRightBtn }) => (activeRightBtn ? '#2196F3' : 'white')};
+  background-color: ${({ activeBtn }) => (activeBtn ? '#2196F3' : '#fff')};
 `;
 
 export const WrapButton = styled.div`
@@ -90,6 +80,9 @@ export const Wrap = styled.div`
 
 export const Label = styled.label`
   width: 230px;
+  height: 40px;
+  display: flex;
+  align-items: center;
   margin-left: 20px;
   font-size: 13px;
   font-weight: normal;
@@ -100,7 +93,6 @@ export const Label = styled.label`
   &:before {
     content: '';
     position: absolute;
-    top: -4px;
     left: 0;
     width: 20px;
     height: 20px;
@@ -114,7 +106,7 @@ export const Label = styled.label`
     content: '';
     opacity: 0;
     position: absolute;
-    top: 3px;
+    top: 15px;
     left: 4px;
     width: 20px;
     height: 20px;
